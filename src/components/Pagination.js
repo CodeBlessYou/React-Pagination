@@ -16,6 +16,8 @@ const Pagination = ({
 
     return (
         <div className='pagination'>
+            <button className='navbtn' onClick={()=> { setCurrentPage(pages[0])}} >First</button>
+            <button className="navbtn" onClick={()=> {setCurrentPage(currentPage===1?currentPage:currentPage-1)}} >Prev</button>
             {pages.map((page, index) => {
                 return (
                     <button
@@ -26,6 +28,8 @@ const Pagination = ({
                     </button>
                 );
             })}
+            <button className="navbtn" onClick={()=> {setCurrentPage(currentPage===pages.length?currentPage:currentPage+1)}} >Next</button>
+            <button className="navbtn" onClick={()=> { setCurrentPage(pages.length)}}  >Last</button>
         </div>
     );
 };
